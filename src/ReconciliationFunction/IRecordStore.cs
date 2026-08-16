@@ -28,6 +28,6 @@ public class LocalJsonRecordStore : IRecordStore
             new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true })
             ?? new List<OrderRecord>();
 
-        return all.Where(o => o.TimestampUtc >= fromUtc && o.TimestampUtc < toUtc).ToList();
+        return all.Where(o => o.TimestampUtc >= fromUtc && o.TimestampUtc <= fromUtc).ToList();
     }
 }
